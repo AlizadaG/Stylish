@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Force Element State Demo</title>
+  <style>
+    /* Varsayılan stil */
+    .box {
+      width: 200px;
+      height: 50px;
+      margin: 20px;
+      border: 2px solid black;
+      background-color: lightgray;
+      text-align: center;
+      line-height: 50px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* :active */
+    .box:active {
+      background-color: red;
+      color: white;
+    }
+
+    /* :hover */
+    .box:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    /* :focus */
+    .box:focus {
+      outline: 3px solid green;
+      background-color: yellow;
+    }
+
+    /* :focus-within */
+    .wrapper:focus-within {
+      border: 3px dashed orange;
+    }
+
+    /* :focus-visible */
+    .box:focus-visible {
+      outline: 3px solid purple;
+    }
+
+    /* :target */
+    .box:target {
+      border: 3px solid pink;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Force Element State Demo</h1>
+  <p>Aşağıdaki kutular üzerinde fare, klavye veya URL ile etkileşime girerek farklı durumları test edebilirsiniz.</p>
+
+  <!-- :active ve :hover -->
+  <div class="box">Hover / Active</div>
+
+  <!-- :focus -->
+  <button class="box">Focus Me (Button)</button>
+
+  <!-- :focus-within -->
+  <div class="wrapper">
+    <input type="text" class="box" placeholder="Focus Within (Input)">
+  </div>
+
+  <!-- :target -->
+  <a href="#target-box" class="box">Go to Target</a>
+  <div id="target-box" class="box">I am Targeted</div>
+  <i class="fa-solid fa-trash"></i>
+  <script>
+    // :focus-visible için test etmek isterseniz, JavaScript kullanarak klavye ile gezinmeyi zorunlu kılabilirsiniz.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Tab") {
+        document.body.classList.add("keyboard-navigation");
+      }
+    });
+  </script>
+</body>
+</html>

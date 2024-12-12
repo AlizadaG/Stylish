@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 100%;
+}
+.part1 p{
+    width: 90%;
+    margin-top: 30px;
+    display: inline-block;
+}
+.part1 h2{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background-color: rgb(213, 232, 248);
+    position: fixed;
+    margin-bottom: 10px;
+}
+.part2{
+    width: 8%;
+    position: sticky;
+    top: 40px;
+    padding: 40px 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: rgb(116, 116, 244);
+}
